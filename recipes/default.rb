@@ -50,7 +50,7 @@ end
 
 gem_package "bundler" do
   options('--pre')
-  action :nothing
+  action :install
 end
 
 gem_package "foreman" do
