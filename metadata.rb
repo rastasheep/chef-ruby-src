@@ -3,7 +3,7 @@ maintainer        "https://www.statuspage.io"
 maintainer_email  "scott@statuspage.io"
 license           "Apache 2.0"
 description       "Installs system ruby from source"
-version           "1.0.3"
+version           "1.0.4"
 recipe            "ruby-src", "Installs system ruby from source."
 
 depends           "build-essential"

@@ -9,6 +9,7 @@
 
 # http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p374.tar.gz
 
+include_recipe "build-essential"
 
 packages = value_for_platform_family(
              "rhel" => ["openssl-devel","zlib-devel","readline-devel", "libyaml-devel"],
@@ -43,16 +44,6 @@ bash "ensure_ruby_install" do
   user "root"
   notifies :run, "bash[install_ruby]", :immediately
   notifies :install, "gem_package[bundler]", :immediately
-  notifies :install, "gem_package[foreman]", :immediately
-  notifies :install, "gem_package[chef]", :immediately
 end
 
 gem_package "bundler"
-
-gem_package "foreman" do
-  action :nothing
-end
-
-gem_package "chef" do
-  action :nothing
-end
